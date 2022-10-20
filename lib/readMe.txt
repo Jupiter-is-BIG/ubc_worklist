@@ -1,0 +1,1053 @@
+// bool? ClashInList(List<Course> subject) {
+  //   int i = 0;
+  //   int j = 1;
+  //   int k = subject.length;
+  //   if (k >= 2) {
+  //     while (i < j) {
+  //       while (j < k) {
+  //         if (CourseClash(subject[i], subject[j])) {
+  //           return true;
+  //         } else {
+  //           return false;
+  //         }
+  //         j += 1;
+  //       }
+  //       i += 1;
+  //     }
+  //   } else {
+  //     return false;
+  //   }
+
+  // }
+
+  List<List<Course>> SecondaryBuilderWorklistMaker(
+      List<List<Course>> i1, List<Course> i2) {
+    int k = i1.length;
+    int m = i2.length;
+    int count = 0;
+
+    while (count < k) {
+      int j = 0;
+      while (j < m) {
+        if (ClashInList(i1[0], i2[j]) == false) {
+          List<Course> temp = i1[0];
+          temp.add(i2[j]);
+          i1.add(temp);
+        }
+        j++;
+      }
+      i1.removeAt(0);
+      count++;
+    }
+    return i1;
+  }
+
+  =========================MY WORKLIST PREFERENCES==========================
+  [
+  CourseKey(courseID: 'COSC121', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 121 101',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [930, 1100],
+      courseStat: '204/16/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'COSC 121 102',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1830, 2000],
+      courseStat: '144/6/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  CourseKey(courseID: 'COSC221', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 221 101',
+      courseDay: ['Mon', 'Wed', 'Fri'],
+      courseTime: [1000, 1100],
+      courseStat: '100/10/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + seminar',
+    )
+  ]),
+  CourseKey(courseID: 'COSC111', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 111 001',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [1400, 1530],
+      courseStat: '85/15/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'COSC 111 002',
+      courseDay: ['Wed', 'Fri'],
+      courseTime: [1700, 1830],
+      courseStat: '0/2/0',
+      // 198/2/0 changed just for checking
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'COSC 111 003',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1400, 1530],
+      courseStat: '91/9/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  CourseKey(courseID: 'MATH200', courseWithIDGroup: [
+    Course(
+      courseName: 'MATH 200 001',
+      courseDay: ['Mon', 'Wed', 'Fri'],
+      courseTime: [900, 1000],
+      courseStat: '90/10/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'MATH 200 002',
+      courseDay: ['Mon', 'Wed', 'Fri'],
+      courseTime: [1400, 1500],
+      courseStat: '96/4/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  CourseKey(courseID: 'MATH221', courseWithIDGroup: [
+    Course(
+      courseName: 'MATH 221 001',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1400, 1530],
+      courseStat: '93/7/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'MATH 221 101',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1400, 1530],
+      courseStat: '144/1/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  CourseKey(courseID: 'DATA101', courseWithIDGroup: [
+    Course(
+        courseName: 'DATA 101 001',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1530, 1700],
+        courseStat: '63/17/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture + lab'),
+  ]),
+  // CourseKey(courseID: 'STAT230', courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'STAT 230 101',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1100, 1200],
+  //       courseStat: '144/6/0',
+  //       courseTerm: 2,
+  //       courseAdditionalRequirements: 'lecture + lab'),
+  // ]),
+  // CourseKey(courseID: 'TEST786', courseCredits: 6, courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'TEST 786 101',
+  //       courseDay: ['Thu'],
+  //       courseTime: [2000, 2010],
+  //       courseStat: '63/17/0',
+  //       courseTerm: 2,
+  //       courseAdditionalRequirements: 'lecture'),
+  // ]),
+  CourseKey(courseID: 'CORH203', courseWithIDGroup: [
+    Course(
+        courseName: 'CORH 203 101',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1100, 1230],
+        courseStat: '63/17/0',
+        courseTerm: 2,
+        courseAdditionalRequirements: 'lecture'),
+  ]),
+  CourseKey(courseID: 'ENGL112', courseWithIDGroup: [
+    Course(
+        courseName: 'ENGL 112 004',
+        courseDay: ['Mon', 'Wed', 'Fri'],
+        courseTime: [1600, 1700],
+        courseStat: '30/0/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture (Hybrid)'),
+    Course(
+        courseName: 'ENGL 112 006',
+        courseDay: ['Mon', 'Wed', 'Fri'],
+        courseTime: [1100, 1200],
+        courseStat: '25/5/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 008',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1700, 1830],
+        courseStat: '30/0/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 009',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1830, 2000],
+        courseStat: '29/1/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 010',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1830, 2000],
+        courseStat: '0/3/0',
+        // 27/3/0 changed just for checking
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 011',
+        courseDay: ['Wed', 'Fri'],
+        courseTime: [800, 930],
+        courseStat: '17/4/9',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture (online)'),
+    Course(
+        courseName: 'ENGL 112 012',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1700, 1830],
+        courseStat: '13/2/15',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 013',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1100, 1230],
+        courseStat: '22/8/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 014',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1400, 1530],
+        courseStat: '28/2/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 016',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1230, 1400],
+        courseStat: '27/3/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 017',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1530, 1700],
+        courseStat: '13/2/15',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+  ]),
+  // CourseKey(courseID: 'CHEE121', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'CHSD',
+  //     courseDay: ['Fri'],
+  //     courseTime: [930, 1032],
+  //     courseStat: 'a/b/c',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   )
+  // ]),
+];
+
+=============================SOUMIL RELATED STUFF========================
+[
+  // CourseKey(courseID: 'MGMT100', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'MGMT 100 001',
+  //     courseDay: ['Tue', 'Thu'],
+  //     courseTime: [1400, 1530],
+  //     courseStat: '186/32/132',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab + tut',
+  //   ),
+  // ]),
+  CourseKey(courseID: 'COSC123', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 123 101',
+      courseDay: ['Wed', 'Fri'],
+      courseTime: [1530, 1700],
+      courseStat: '161/19/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+  ]),
+  CourseKey(courseID: 'ENGL150', courseWithIDGroup: [
+    Course(
+      courseName: 'ENGL 150 101',
+      courseDay: ['Wed', 'Fri'],
+      courseTime: [800, 930],
+      courseStat: '34/1/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 103',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [1230, 1400],
+      courseStat: '20/5/10',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 104',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1700, 1830],
+      courseStat: '35/0/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 105',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [930, 1100],
+      courseStat: '32/0/3',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 106',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [930, 1100],
+      courseStat: '35/0/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 107',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1230, 1400],
+      courseStat: '33/2/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 108',
+      courseDay: ['Wed', 'Fri'],
+      courseTime: [1100, 1230],
+      courseStat: '33/2/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 109',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [1530, 1700],
+      courseStat: '20/0/15',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+    Course(
+      courseName: 'ENGL 150 110',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [1700, 1830],
+      courseStat: '31/0/4',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture',
+    ),
+  ]),
+  // CourseKey(courseID: 'PHYS111', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'PHYS 111 001',
+  //     courseDay: ['Mon', 'Wed', 'Fri'],
+  //     courseTime: [1600, 1700],
+  //     courseStat: '314/6/0',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab + tut',
+  //   ),
+  // ]),
+  // CourseKey(courseID: 'COSC122', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'COSC 122 001',
+  //     courseDay: ['Wed', 'Fri'],
+  //     courseTime: [1400, 1530],
+  //     courseStat: '197/28/0',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   ),
+  // ]),
+  CourseKey(courseID: 'MATH101', courseWithIDGroup: [
+    Course(
+      courseName: 'MATH 101 101',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1700, 1830],
+      courseStat: '199/1/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'MATH 101 102',
+      courseDay: ['Mon', 'Wed', 'Fri'],
+      courseTime: [1300, 1400],
+      courseStat: '156/4/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'MATH 101 103',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [1830, 2000],
+      courseStat: '155/5/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+  ]),
+  CourseKey(courseID: 'COSC121', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 121 101',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [930, 1100],
+      courseStat: '204/16/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'COSC 121 102',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1830, 2000],
+      courseStat: '144/6/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  // CourseKey(courseID: 'COSC221', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'COSC 221 101',
+  //     courseDay: ['Mon', 'Wed', 'Fri'],
+  //     courseTime: [1000, 1100],
+  //     courseStat: '100/10/0',
+  //     courseTerm: 2,
+  //     courseAdditionalRequirements: 'lecture + seminar',
+  //   )
+  // ]),
+  // CourseKey(courseID: 'COSC111', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'COSC 111 001',
+  //     courseDay: ['Mon', 'Wed'],
+  //     courseTime: [1400, 1530],
+  //     courseStat: '85/15/0',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   ),
+  //   Course(
+  //     courseName: 'COSC 111 002',
+  //     courseDay: ['Wed', 'Fri'],
+  //     courseTime: [1700, 1830],
+  //     courseStat: '198/2/0',
+  //     // 198/2/0 changed just for checking
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   ),
+  //   Course(
+  //     courseName: 'COSC 111 003',
+  //     courseDay: ['Tue', 'Thu'],
+  //     courseTime: [1400, 1530],
+  //     courseStat: '91/9/0',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   )
+  // ]),
+
+  // CourseKey(courseID: 'MATH200', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'MATH 200 001',
+  //     courseDay: ['Mon', 'Wed', 'Fri'],
+  //     courseTime: [900, 1000],
+  //     courseStat: '90/10/0',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   ),
+  //   Course(
+  //     courseName: 'MATH 200 002',
+  //     courseDay: ['Mon', 'Wed', 'Fri'],
+  //     courseTime: [1400, 1500],
+  //     courseStat: '96/4/0',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   )
+  // ]),
+  // CourseKey(courseID: 'MATH221', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'MATH 221 001',
+  //     courseDay: ['Tue', 'Thu'],
+  //     courseTime: [1400, 1530],
+  //     courseStat: '93/7/0',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   ),
+  //   Course(
+  //     courseName: 'MATH 221 101',
+  //     courseDay: ['Tue', 'Thu'],
+  //     courseTime: [1400, 1530],
+  //     courseStat: '144/1/0',
+  //     courseTerm: 2,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   )
+  // ]),
+  CourseKey(courseID: 'DATA101', courseWithIDGroup: [
+    Course(
+        courseName: 'DATA 101 001',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [930, 1100],
+        courseStat: '71/9/0',
+        courseTerm: 2,
+        courseAdditionalRequirements: 'lecture + lab'),
+  ]),
+  // CourseKey(courseID: 'STAT230', courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'STAT 230 101',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1100, 1200],
+  //       courseStat: '144/6/0',
+  //       courseTerm: 2,
+  //       courseAdditionalRequirements: 'lecture + lab'),
+  // ]),
+  // CourseKey(courseID: 'TEST786', courseCredits: 6, courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'TEST 786 101',
+  //       courseDay: ['Thu'],
+  //       courseTime: [2000, 2010],
+  //       courseStat: '63/17/0',
+  //       courseTerm: 2,
+  //       courseAdditionalRequirements: 'lecture'),
+  // ]),
+  // CourseKey(courseID: 'CORH203', courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'CORH 203 101',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1100, 1230],
+  //       courseStat: '63/17/0',
+  //       courseTerm: 2,
+  //       courseAdditionalRequirements: 'lecture'),
+  // ]),
+  // CourseKey(courseID: 'ENGL112', courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'ENGL 112 004',
+  //       courseDay: ['Mon', 'Wed', 'Fri'],
+  //       courseTime: [1600, 1700],
+  //       courseStat: '30/0/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture (Hybrid)'),
+  //   Course(
+  //       courseName: 'ENGL 112 006',
+  //       courseDay: ['Mon', 'Wed', 'Fri'],
+  //       courseTime: [1100, 1200],
+  //       courseStat: '25/5/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 008',
+  //       courseDay: ['Mon', 'Wed'],
+  //       courseTime: [1700, 1830],
+  //       courseStat: '30/0/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 009',
+  //       courseDay: ['Mon', 'Wed'],
+  //       courseTime: [1830, 2000],
+  //       courseStat: '29/1/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 010',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1830, 2000],
+  //       courseStat: '27/3/0',
+  //       // 27/3/0 changed just for checking
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 011',
+  //       courseDay: ['Wed', 'Fri'],
+  //       courseTime: [800, 930],
+  //       courseStat: '17/4/9',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture (online)'),
+  //   Course(
+  //       courseName: 'ENGL 112 012',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1700, 1830],
+  //       courseStat: '13/2/15',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 013',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1100, 1230],
+  //       courseStat: '22/8/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 014',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1400, 1530],
+  //       courseStat: '28/2/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 016',
+  //       courseDay: ['Mon', 'Wed'],
+  //       courseTime: [1230, 1400],
+  //       courseStat: '27/3/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  //   Course(
+  //       courseName: 'ENGL 112 017',
+  //       courseDay: ['Mon', 'Wed'],
+  //       courseTime: [1530, 1700],
+  //       courseStat: '13/2/15',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture'),
+  // ]),
+  // CourseKey(courseID: 'CHEE121', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'CHSD',
+  //     courseDay: ['Fri'],
+  //     courseTime: [930, 1032],
+  //     courseStat: 'a/b/c',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   )
+  // ]),
+];
+
+
+=================== WELL ==========================
+[
+  // ===========================COSC 122==================
+  CourseKey(courseID: 'COSC122', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 122 001',
+      courseDay: ['Wed', 'Fri'],
+      courseTime: [1400, 1530],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+  ]),
+  CourseKey(courseID: 'COSC122lab', courseWithIDGroup: [
+    // Course(
+    //   courseName: 'COSC 122 L01',
+    //   courseDay: ['Tue'],
+    //   courseTime: [800, 1000],
+    //   courseStat: '197/28/0',
+    //   courseTerm: 1,
+    //   courseAdditionalRequirements: 'lab',
+    // ),
+    Course(
+      courseName: 'COSC 122 L02',
+      courseDay: ['Thu'],
+      courseTime: [1400, 1600],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lab',
+    ),
+    Course(
+      courseName: 'COSC 122 L03',
+      courseDay: ['Fri'],
+      courseTime: [1200, 1400],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lab',
+    ),
+    Course(
+      courseName: 'COSC 122 L04',
+      courseDay: ['Tue'],
+      courseTime: [1400, 1600],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lab',
+    ),
+    Course(
+      courseName: 'COSC 122 L06',
+      courseDay: ['Mon'],
+      courseTime: [800, 1000],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lab',
+    ),
+    Course(
+      courseName: 'COSC 122 L07',
+      courseDay: ['Wed'],
+      courseTime: [800, 1000],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lab',
+    ),
+    Course(
+      courseName: 'COSC 122 L08',
+      courseDay: ['Tue'],
+      courseTime: [1400, 1600],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lab',
+    ),
+    Course(
+      courseName: 'COSC 122 L09',
+      courseDay: ['Thu'],
+      courseTime: [1000, 1200],
+      courseStat: '197/28/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lab',
+    ),
+  ]),
+  // ============================ END OF COSC 122================
+
+  // ============================ APSC 172 ======================
+  CourseKey(courseID: 'APSC172', courseWithIDGroup: [
+    Course(
+      courseName: 'APSC 172 101',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1530, 1700],
+      courseStat: '24/2/199',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + tut',
+    ),
+    Course(
+      courseName: 'APSC 172 102',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1830, 2000],
+      courseStat: '25/2/198',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + tut',
+    )
+  ]),
+  CourseKey(courseID: 'APSC172lab', courseWithIDGroup: [
+    // Course(
+    //   courseName: 'APSC 172 T1A',
+    //   courseDay: ['Wed'],
+    //   courseTime: [800, 900],
+    //   courseStat: '24/2/199',
+    //   courseTerm: 1,
+    //   courseAdditionalRequirements: 'tutorial',
+    // ),
+    // Course(
+    //   courseName: 'APSC 172 T1BC',
+    //   courseDay: ['Wed'],
+    //   courseTime: [1300, 1400],
+    //   courseStat: '24/2/199',
+    //   courseTerm: 1,
+    //   courseAdditionalRequirements: 'tutorial',
+    // ),
+    Course(
+      courseName: 'APSC 172 T1D',
+      courseDay: ['Mon'],
+      courseTime: [1000, 1100],
+      courseStat: '24/2/199',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+  ]),
+
+// ============================= END OF APSC 172 =======================
+
+// ============================ APSC173 ==============================
+  CourseKey(courseID: 'APSC173', courseWithIDGroup: [
+    Course(
+      courseName: 'APSC 173 201',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1400, 1530],
+      courseStat: '25/1/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + tut',
+    ),
+    Course(
+      courseName: 'APSC 173 202',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [1400, 1530],
+      courseStat: '25/2/198',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + tut',
+    )
+  ]),
+  CourseKey(courseID: 'APSC173lab', courseWithIDGroup: [
+    Course(
+      courseName: 'APSC 173 T2A',
+      courseDay: ['Tue'],
+      courseTime: [1700, 1800],
+      courseStat: '24/2/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+    Course(
+      courseName: 'APSC 173 T2B',
+      courseDay: ['Mon'],
+      courseTime: [1500, 1600],
+      courseStat: '24/2/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+    Course(
+      courseName: 'APSC 173 T2C',
+      courseDay: ['Tue'],
+      courseTime: [1300, 1400],
+      courseStat: '24/2/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+    Course(
+      courseName: 'APSC 173 T2D',
+      courseDay: ['Mon'],
+      courseTime: [1700, 1800],
+      courseStat: '24/2/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+    Course(
+      courseName: 'APSC 173 T2E',
+      courseDay: ['Tue'],
+      courseTime: [1200, 1300],
+      courseStat: '24/2/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+    Course(
+      courseName: 'APSC 173 T2F',
+      courseDay: ['Fri'],
+      courseTime: [1700, 1800],
+      courseStat: '24/2/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+    Course(
+      courseName: 'APSC 173 T2G',
+      courseDay: ['Fri'],
+      courseTime: [1100, 1200],
+      courseStat: '24/2/199',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'tutorial',
+    ),
+  ]),
+// =========================== END OF APSC 173 ====================
+  CourseKey(courseID: 'COSC121', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 121 101',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [930, 1100],
+      courseStat: '204/16/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'COSC 121 102',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1830, 2000],
+      courseStat: '144/6/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  CourseKey(courseID: 'COSC221', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 221 101',
+      courseDay: ['Mon', 'Wed', 'Fri'],
+      courseTime: [1000, 1100],
+      courseStat: '100/10/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + seminar',
+    )
+  ]),
+  CourseKey(courseID: 'COSC111', courseWithIDGroup: [
+    Course(
+      courseName: 'COSC 111 001',
+      courseDay: ['Mon', 'Wed'],
+      courseTime: [1400, 1530],
+      courseStat: '85/15/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'COSC 111 002',
+      courseDay: ['Wed', 'Fri'],
+      courseTime: [1700, 1830],
+      courseStat: '198/2/0',
+      // 198/2/0 changed just for checking
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'COSC 111 003',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1400, 1530],
+      courseStat: '91/9/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  CourseKey(courseID: 'MATH200', courseWithIDGroup: [
+    Course(
+      courseName: 'MATH 200 001',
+      courseDay: ['Mon', 'Wed', 'Fri'],
+      courseTime: [900, 1000],
+      courseStat: '90/10/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'MATH 200 002',
+      courseDay: ['Mon', 'Wed', 'Fri'],
+      courseTime: [1400, 1500],
+      courseStat: '96/4/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  CourseKey(courseID: 'MATH221', courseWithIDGroup: [
+    Course(
+      courseName: 'MATH 221 001',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1400, 1530],
+      courseStat: '93/7/0',
+      courseTerm: 1,
+      courseAdditionalRequirements: 'lecture + lab',
+    ),
+    Course(
+      courseName: 'MATH 221 101',
+      courseDay: ['Tue', 'Thu'],
+      courseTime: [1400, 1530],
+      courseStat: '144/1/0',
+      courseTerm: 2,
+      courseAdditionalRequirements: 'lecture + lab',
+    )
+  ]),
+  // CourseKey(courseID: 'DATA101', courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'DATA 101 001',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1530, 1700],
+  //       courseStat: '63/17/0',
+  //       courseTerm: 1,
+  //       courseAdditionalRequirements: 'lecture + lab'),
+  // ]),
+  // CourseKey(courseID: 'STAT230', courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'STAT 230 101',
+  //       courseDay: ['Tue', 'Thu'],
+  //       courseTime: [1100, 1200],
+  //       courseStat: '144/6/0',
+  //       courseTerm: 2,
+  //       courseAdditionalRequirements: 'lecture + lab'),
+  // ]),
+  // CourseKey(courseID: 'TEST786', courseCredits: 6, courseWithIDGroup: [
+  //   Course(
+  //       courseName: 'TEST 786 101',
+  //       courseDay: ['Thu'],
+  //       courseTime: [2000, 2010],
+  //       courseStat: '63/17/0',
+  //       courseTerm: 2,
+  //       courseAdditionalRequirements: 'lecture'),
+  // ]),
+  CourseKey(courseID: 'CORH203', courseWithIDGroup: [
+    Course(
+        courseName: 'CORH 203 101',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1100, 1230],
+        courseStat: '63/17/0',
+        courseTerm: 2,
+        courseAdditionalRequirements: 'lecture'),
+  ]),
+  CourseKey(courseID: 'ENGL112', courseWithIDGroup: [
+    Course(
+        courseName: 'ENGL 112 004',
+        courseDay: ['Mon', 'Wed', 'Fri'],
+        courseTime: [1600, 1700],
+        courseStat: '30/0/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture (Hybrid)'),
+    Course(
+        courseName: 'ENGL 112 006',
+        courseDay: ['Mon', 'Wed', 'Fri'],
+        courseTime: [1100, 1200],
+        courseStat: '25/5/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 008',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1700, 1830],
+        courseStat: '30/0/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 009',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1830, 2000],
+        courseStat: '29/1/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 010',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1830, 2000],
+        courseStat: '27/3/0',
+        // 27/3/0 changed just for checking
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 011',
+        courseDay: ['Wed', 'Fri'],
+        courseTime: [800, 930],
+        courseStat: '17/4/9',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture (online)'),
+    Course(
+        courseName: 'ENGL 112 012',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1700, 1830],
+        courseStat: '13/2/15',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 013',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1100, 1230],
+        courseStat: '22/8/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 014',
+        courseDay: ['Tue', 'Thu'],
+        courseTime: [1400, 1530],
+        courseStat: '28/2/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 016',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1230, 1400],
+        courseStat: '27/3/0',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+    Course(
+        courseName: 'ENGL 112 017',
+        courseDay: ['Mon', 'Wed'],
+        courseTime: [1530, 1700],
+        courseStat: '13/2/15',
+        courseTerm: 1,
+        courseAdditionalRequirements: 'lecture'),
+  ]),
+  // CourseKey(courseID: 'CHEE121', courseWithIDGroup: [
+  //   Course(
+  //     courseName: 'CHSD',
+  //     courseDay: ['Fri'],
+  //     courseTime: [930, 1032],
+  //     courseStat: 'a/b/c',
+  //     courseTerm: 1,
+  //     courseAdditionalRequirements: 'lecture + lab',
+  //   )
+  // ]),
+];
